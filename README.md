@@ -78,6 +78,18 @@ pip install python-dotenv
 ...etc...
 ```
 
+## Alpaca API Setup
+
+You must generate an Alpaca API key and secret if you want to run the notebook api queries yourself. To do this, go to [Alpaca API Signup](https://app.alpaca.markets/signup), and create an account, then generate and API key and secret. These values should then be put into a file named `.env` located at the root of this repo, like below. The values will then be read into the notebook by the `load_dotenv()` and `os.getenv()` calls.
+
+Example .env file contents:
+
+```
+ALPACA_API_KEY = 'YOUR_API_KEY'
+ALPACA_SECRET_KEY = 'YOUR_SECRET_KEY'
+
+```
+
 ---
 
 ## Usage
