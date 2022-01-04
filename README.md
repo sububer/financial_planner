@@ -6,14 +6,37 @@ Financial Planning Tools for Emergencies and Retirement
 
 ## Analysis 
 
+This challenge created two financial analysis tools:
+- emergency financial planner (crypto, stocks, bonds)
+- retirement planner (stocks/bonds, with different weights and timeframes)
+
+See full analysis details in the notebook [financial_planning_tools.ipynb](./financial_planning_tools.ipynb)
+
 #### DataSets
 
-
+1. Emergency Planner
+  * crypto prices for BTC and ETH from Free Crypto API
+  * SPY and AGG prices from alpaca tradeapi, for date 2021-12-30
+2. Retirement Planner
+  * past three years SPY AGG close data from alpaca trade API
 
 #### Assumptions
 
+1. Emergency Planner
+  * saver's monthy income is $12,000
+  * portfolio contains 1.2 BTC and 5.3 ETH
+  * portfolio contains 110 SPY and 200 AGG shares  
+2. Retirement Planner
+  * past three years SPY AGG close data from alpaca trade API, from 2018-12-30 -> 2021-12-30
+  * portfolio forcasting of 30 yr 60/40 stock/bonds vs 10yr 80/20 stocks/bonds 
 
 #### Summary
+
+1. Emergency Planner Summary:
+  *  The saver will have $151094.05, which is enough for an emergency fund. 
+2. Retirement Planner Summary:
+  * The 30 year 60/40 portfolio had lower/upper bounds of 1.3 -> 26 million dollars. However the 10 year 80/20 portfolio had much smaller lower/upper bounds at 171 K -> 1.2 million dollars. Assuming the saver wants at least 10yrs current salary (approx 1.4 million) in retirement savings before retiring, then NO, it is unlikely that the 10 yr portfolio will give the saver enough money.
+
 
 See details and visualizations in the notebook [financial_planning_tools.ipynb](./financial_planning_tools.ipynb)
 
@@ -22,7 +45,7 @@ See details and visualizations in the notebook [financial_planning_tools.ipynb](
 ## Technologies
 
 This challenge uses [python](https://www.python.org/) 3.7 and the following [built-in](https://docs.python.org/3/py-modindex.html) modules:
-- [pathlib](https://docs.python.org/3/library/pathlib.html#module-pathlib)
+- [json](https://docs.python.org/3/library/json.html#module-json)
 - [os](https://docs.python.org/3/library/os.html#module-os)
 
 Additionally, it requires:
@@ -49,6 +72,10 @@ conda create --name dev python=3.7 anaconda
 
 # activating the environment
 conda activate dev
+
+# use pip to install the above modules, eg:
+pip install python-dotenv
+...etc...
 ```
 
 ---
